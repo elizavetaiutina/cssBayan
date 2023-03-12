@@ -75,10 +75,6 @@
   transform: rotate(45deg);
 }
 
-.mem__item:hover .mem__name {
-  opacity: 0.7;
-}
-
 .mem__item:hover .mem__img {
   display: block;
   visibility: visible;
