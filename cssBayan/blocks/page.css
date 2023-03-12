@@ -1,8 +1,8 @@
 .page {
-  max-width: 600px;
+  max-width: 1400px;
   box-sizing: border-box;
   margin: 0 auto;
-  padding: 0;
+  padding: 0 5vw;
   background-color: #fefffa;
   font-family: "Nunito", "Arial", sans-serif;
 

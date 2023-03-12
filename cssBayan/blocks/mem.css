@@ -1,12 +1,3 @@
-@keyframes openItem {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 .mem__list {
   list-style: none;
   margin: 0;
@@ -14,7 +5,7 @@
 }
 
 .mem__item {
-  border-bottom: 1px solid #ff6873;
+  border-bottom: 0.1rem solid #ff6873;
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -32,20 +23,19 @@
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  /*transition: all 0.3s ease-in-out;*/
+  padding: 4vh 0 3vh;
 }
 
 .mem__title {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
   cursor: pointer;
 }
 
 .mem__name {
-  font-size: 20px;
-  font-weight: 900;
+  font-size: 1.1rem;
+  font-weight: 700;
   color: #ff6873;
   margin: 0;
   padding: 0;
@@ -53,7 +43,7 @@
 
 .mem__icon {
   opacity: 0;
-  width: 30px;
+  width: 7vh;
   transition: transform 0.1s ease-in;
   margin: 0;
 }
@@ -63,17 +53,17 @@
   width: 0;
   height: 0;
   align-self: center;
-  margin: 0 0 20px;
+  margin: 2vh 0 0;
   transition: all 0.4s ease-in-out;
   opacity: 0;
-  transform: scale(0.9);
+  transform: scale(0.8);
 }
 
 /* HOVER*/
 
 .mem__list:hover .mem__name {
   color: black;
-  transition: all 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .mem__list:hover .mem__icon {
@@ -90,15 +80,16 @@
 }
 
 .mem__item:hover .mem__img {
+  display: block;
   visibility: visible;
-  min-width: 200px;
-  min-height: 200px;
-  opacity: 1;
+  width: 75%;
+  height: auto;
+  opacity: 0.9;
   transform: scale(1);
 }
 
 .mem__list:hover .mem__item {
-  border-bottom: 1px solid black;
+  border-bottom: 0.1rem solid black;
 }
 
 .mem__list:hover .mem__item:last-of-type {
@@ -109,6 +100,7 @@
 
 .mem__item:active {
   opacity: 0.7;
+  transition: all 0.2s ease-in-out;
 }
 
 .mem__item:active .mem__name {
@@ -117,7 +109,7 @@
 }
 
 .mem__item:active {
-  border-bottom: 1px solid #ff6873;
+  border-bottom: 0.1rem solid #ff6873;
 }
 
 /* CHECKED*/
@@ -128,12 +120,75 @@
 
 .mem__input:checked + .mem__content > .mem__img {
   visibility: visible;
-  min-width: 200px;
-  min-height: 200px;
+  display: block;
+  width: 75%;
+  height: auto;
   opacity: 1;
   transform: scale(1);
 }
 
 .mem__input:checked + .mem__content > .mem__title > .mem__name {
   color: black;
+}
+
+@media (min-width: 500px) {
+  .mem__content {
+    padding: 6vh 0 4vh;
+  }
+
+  .mem__item {
+    border-bottom: 0.2rem solid #ff6873;
+  }
+
+  .mem__list:hover .mem__item {
+    border-bottom: 0.2rem solid black;
+  }
+
+  .mem__item:active {
+    border-bottom: 0.2rem solid #ff6873;
+  }
+
+  .mem__name {
+    font-size: 1.5rem;
+  }
+
+  .mem__img {
+    margin-top: 5vh;
+  }
+
+  .mem__item:hover .mem__img {
+    width: 50%;
+  }
+
+  .mem__input:checked + .mem__content > .mem__img {
+    width: 50%;
+  }
+}
+
+@media (min-width: 900px) {
+  .mem__content {
+    padding: 7vh 0 5vh;
+  }
+
+  .mem__name {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .mem__item {
+    border-bottom: 0.3rem solid #ff6873;
+  }
+
+  .mem__list:hover .mem__item {
+    border-bottom: 0.3rem solid black;
+  }
+
+  .mem__item:active {
+    border-bottom: 0.3rem solid #ff6873;
+  }
+
+  .mem__name {
+    font-size: 2.5rem;
+  }
 }
