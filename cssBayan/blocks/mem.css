@@ -1,0 +1,190 @@
+.mem__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mem__item {
+  border-bottom: 0.1rem solid #ff6873;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.mem__item:last-of-type {
+  border-bottom: none;
+}
+
+.mem__input {
+  display: none;
+}
+
+.mem__content {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 4vh 0 3vh;
+}
+
+.mem__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.mem__name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ff6873;
+  margin: 0;
+  padding: 0;
+}
+
+.mem__icon {
+  opacity: 0;
+  width: 7vh;
+  transition: transform 0.1s ease-in;
+  margin: 0;
+}
+
+.mem__img {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  align-self: center;
+  margin: 2vh 0 0;
+  transition: all 0.4s ease-in-out;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+/* HOVER*/
+
+.mem__list:hover .mem__name {
+  color: black;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.mem__list:hover .mem__icon {
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.mem__item:hover .mem__icon {
+  transform: rotate(45deg);
+}
+
+.mem__item:hover .mem__img {
+  display: block;
+  visibility: visible;
+  width: 75%;
+  height: auto;
+  opacity: 0.9;
+  transform: scale(1);
+}
+
+.mem__list:hover .mem__item {
+  border-bottom: 0.1rem solid black;
+}
+
+.mem__list:hover .mem__item:last-of-type {
+  border-bottom: none;
+}
+
+/*CLICK по item*/
+
+.mem__item:active {
+  opacity: 0.7;
+  transition: all 0.2s ease-in-out;
+}
+
+.mem__item:active .mem__name {
+  color: #ff6873;
+  opacity: 1;
+}
+
+.mem__item:active {
+  border-bottom: 0.1rem solid #ff6873;
+}
+
+/* CHECKED*/
+
+.mem__input:checked + .mem__content > .mem__title > .mem__icon {
+  transform: rotate(45deg);
+}
+
+.mem__input:checked + .mem__content > .mem__img {
+  visibility: visible;
+  display: block;
+  width: 75%;
+  height: auto;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.mem__input:checked + .mem__content > .mem__title > .mem__name {
+  color: black;
+}
+
+@media (min-width: 500px) {
+  .mem__content {
+    padding: 6vh 0 4vh;
+  }
+
+  .mem__item {
+    border-bottom: 0.2rem solid #ff6873;
+  }
+
+  .mem__list:hover .mem__item {
+    border-bottom: 0.2rem solid black;
+  }
+
+  .mem__item:active {
+    border-bottom: 0.2rem solid #ff6873;
+  }
+
+  .mem__name {
+    font-size: 1.5rem;
+  }
+
+  .mem__img {
+    margin-top: 5vh;
+  }
+
+  .mem__item:hover .mem__img {
+    width: 50%;
+  }
+
+  .mem__input:checked + .mem__content > .mem__img {
+    width: 50%;
+  }
+}
+
+@media (min-width: 900px) {
+  .mem__content {
+    padding: 7vh 0 5vh;
+  }
+
+  .mem__name {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .mem__item {
+    border-bottom: 0.3rem solid #ff6873;
+  }
+
+  .mem__list:hover .mem__item {
+    border-bottom: 0.3rem solid black;
+  }
+
+  .mem__item:active {
+    border-bottom: 0.3rem solid #ff6873;
+  }
+
+  .mem__name {
+    font-size: 2.5rem;
+  }
+}
