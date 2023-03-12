@@ -1,5 +1,8 @@
 .header {
+  border-bottom: 3px solid #ff6873;
 }
 
 .header__title {
+  font-size: 48px;
+  font-weight: 900;
 }

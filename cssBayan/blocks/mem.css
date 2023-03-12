@@ -1,0 +1,139 @@
+@keyframes openItem {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.mem__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mem__item {
+  border-bottom: 1px solid #ff6873;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.mem__item:last-of-type {
+  border-bottom: none;
+}
+
+.mem__input {
+  display: none;
+}
+
+.mem__content {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  /*transition: all 0.3s ease-in-out;*/
+}
+
+.mem__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  cursor: pointer;
+}
+
+.mem__name {
+  font-size: 20px;
+  font-weight: 900;
+  color: #ff6873;
+  margin: 0;
+  padding: 0;
+}
+
+.mem__icon {
+  opacity: 0;
+  width: 30px;
+  transition: transform 0.1s ease-in;
+  margin: 0;
+}
+
+.mem__img {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  align-self: center;
+  margin: 0 0 20px;
+  transition: all 0.4s ease-in-out;
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+/* HOVER*/
+
+.mem__list:hover .mem__name {
+  color: black;
+  transition: all 0.3s ease-in-out;
+}
+
+.mem__list:hover .mem__icon {
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.mem__item:hover .mem__icon {
+  transform: rotate(45deg);
+}
+
+.mem__item:hover .mem__name {
+  opacity: 0.7;
+}
+
+.mem__item:hover .mem__img {
+  visibility: visible;
+  min-width: 200px;
+  min-height: 200px;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.mem__list:hover .mem__item {
+  border-bottom: 1px solid black;
+}
+
+.mem__list:hover .mem__item:last-of-type {
+  border-bottom: none;
+}
+
+/*CLICK по item*/
+
+.mem__item:active {
+  opacity: 0.7;
+}
+
+.mem__item:active .mem__name {
+  color: #ff6873;
+  opacity: 1;
+}
+
+.mem__item:active {
+  border-bottom: 1px solid #ff6873;
+}
+
+/* CHECKED*/
+
+.mem__input:checked + .mem__content > .mem__title > .mem__icon {
+  transform: rotate(45deg);
+}
+
+.mem__input:checked + .mem__content > .mem__img {
+  visibility: visible;
+  min-width: 200px;
+  min-height: 200px;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.mem__input:checked + .mem__content > .mem__title > .mem__name {
+  color: black;
+}
